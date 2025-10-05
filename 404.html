@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=https://sites.google.com/wrdsb.ca/stanleyparkhockey/Home-Page">
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta http-equiv="refresh" content="0; url=https://sites.google.com/wrdsb.ca/stanleyparkhockey">
   <script>
-    const newUrl = "https://sites.google.com/wrdsb.ca/stanleyparkhockey" 
-      + window.location.pathname 
-      + window.location.search 
-      + window.location.hash;
+    const redirects = {
+      "/": "/Home-Page",
+      "/home": "/Home-Page",
+      "/homepage": "/Home-Page",
+      "/sign-up": "/signup",
+      "/photos": "/player-photos"
+    };
+
+    const path = window.location.pathname.toLowerCase();
+    const targetPath = redirects[path] || "";
+    const newUrl = "https://sites.google.com/wrdsb.ca/stanleyparkhockey" + targetPath;
+
     window.location.replace(newUrl);
   </script>
 </head>
