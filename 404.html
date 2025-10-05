@@ -14,8 +14,11 @@
     };
 
     const path = window.location.pathname.toLowerCase();
-    const targetPath = redirects[path] || "";
-    const newUrl = "https://sites.google.com/wrdsb.ca/stanleyparkhockey" + targetPath;
+    const targetPath = redirects[path] || path; // fallback: preserve same path
+    const newUrl = "https://sites.google.com/wrdsb.ca/stanleyparkhockey" 
+      + targetPath 
+      + window.location.search 
+      + window.location.hash;
 
     window.location.replace(newUrl);
   </script>
